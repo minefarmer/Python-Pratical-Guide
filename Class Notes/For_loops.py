@@ -1,42 +1,44 @@
-#  For loop starts at 6
-#  strreamlined version is missing *** modified streamed lined version in while loops
+# Initializing our (empty) blockchain list
+blockchain = []
 
 
+def get_last_blockchain_value():
+    """ Returns the last value of the current blockchain. """
+    return blockchain[-1]
 
-# # For loop  **********************************************
-#  Streamlined version
-# blockchain = []
+# This function accepts two arguments.
+# One required one (transaction_amount) and one optional one (last_transaction)
+# The optional one is optional because it has a default value => [1]
+def add_value(transaction_amount, last_transaction=[1]):
+    """ Append a new value as well as the last blockchain value to the blockchain.
 
-# def get_last_blockchain_value():
-#     return blockchain[-1]
-    
-# def add_value(transaction_amount, last_transaction=[1]):
-#     blockchain.append([last_transaction, transaction_amount])
-    
-# def get_user_input():
-#     return float(input('Your transaction amount please: '))
-
-# tx_amount = get_user_input()  # 10
-# add_value(tx_amount)
-
-# tx_amount = get_user_input()  # 11
-# add_value(last_transaction=get_last_blockchain_value(), transaction_amount=tx_amount)
-
-# tx_amount = get_user_input()  # 12
-# add_value(tx_amount, get_last_blockchain_value())
-
-# #  Output the blockchain list to the console
-# for block in blockchain:
-#     print('Outputting Block')
-#     print(block)
-#                     # Outputting Block
-#                     # [[1], 10.0]
-#                     # Outputting Block
-#                     # [[[1], 10.0], 11.0]
-#                     # Outputting Block
-#                     # [[[[1], 10.0], 11.0], 12.0]
-    
-# print('Done!')  # Done
+    Arguments:
+        :transaction_amount: The amount that should be added.
+        :last_transaction: The last blockchain transaction (default [1]).
+    """
+    blockchain.append([last_transaction, transaction_amount])
 
 
+def get_user_input():
+    """ Returns the input of the user (a new transaction amount) as a float. """
+    user_input = float(input('Your transaction amount please: '))
+    return user_input
 
+# Get the first transaction input and add the value to the blockchain
+tx_amount = get_user_input()
+add_value(tx_amount)
+
+# Get the second transaction input and add the value to the blockchain
+tx_amount = get_user_input()
+add_value(last_transaction=get_last_blockchain_value(), transaction_amount=tx_amount)
+
+# Get the third transaction input and add the value to the blockchain
+tx_amount = get_user_input()
+add_value(tx_amount, get_last_blockchain_value())
+
+# Output the blockchain list to the console
+for block in blockchain:
+    print('Outputting Block')
+    print(block)
+
+print('Done!')
