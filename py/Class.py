@@ -3,7 +3,7 @@ blockchain = []
 
 
 def get_last_blockchain_value():
-    """ Returns the last value of the current blockchain. """
+# Returns the last value of the current blockchain.
     return blockchain[]
 
 # This function accepts two arguments.
