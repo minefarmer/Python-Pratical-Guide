@@ -1,28 +1,38 @@
 # Initializing our (empty) blockchain list
 blockchain = []
+open_transactions =[]
 
 
 def get_last_blockchain_value():
 # Returns the last value of the current blockchain.
-    return blockchain
+    if len(blockchain) < 1:
+        return None
+        return blockchain[-1]
 
 # This function accepts two arguments.
 # One required one (transaction_amount) and one optional one (last_transaction)
 # The optional one is optional because it has a default value => [1]
 
 
-def add_transaction(transaction_amount, last_transaction=[1]):
+def add_transaction(sender, recipient, amount=1.0):
     """ Append a new value as well as the last blockchain value to the blockchain.
 
     Arguments:
-        :transaction_amount: The amount that should be added.
-        :last_transaction: The last blockchain transaction (default [1]).
+        :sender: The sender of the coins.
+        :recipent of the coins. 
+        :amount: the amount of coins sent with the transaction (default = 1.0)
     """
-    if last_transaction == None:
-        last_transaction = [1]
-    blockchain.append([last_transaction, transaction_amount])
+    transaction = {
+        'sender': sender,
+        'recipient': recipient,
+        'amount': amount
+    }
+    open_transactions.append()
+        
 
 
+def mine_block():
+    pass
 
 
 def get_transaction_value():
