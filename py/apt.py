@@ -1,17 +1,24 @@
-# can return values
-def sum(a, b):
-    return a + b
+# Initializing our (empty) blockchain list ************   The final code is not working
+blockchain = [1]
 
-print(sum(2, 5))
+def get_last_blockchain_value():
+    return blockchain[-1]
 
-# default arguments
-def greet(name, age=81):
-    print('Hello ' + name + ', I am ' + age)
+
+def add_value(transaction_amount, last_transaction=[1]):
+    blockchain.append([last_transaction, transaction_amount])
     
-greet('Rich') # Traceback (most recent call last):
-                # File "c:/Users/pgold/MatsonHub/Python-Pratical-Guide/py/apt.py", line 11, in <module>
-                #     greet('Rich')
-                # File "c:/Users/pgold/MatsonHub/Python-Pratical-Guide/py/apt.py", line 9, in greet                            ython.exe c:/Users/pgold/MatsonHub/P
-                #     print('Hello ' + name + ', I am ' + age)
-                # TypeError: can only concatenate str (not "int") to str
-                # PS C:\Users\pgold\MatsonHub\Python-Pratical-Guide>
+    
+def get_user_input():
+    return float(input('Your transaction amount please: '))
+
+tx_amount = get_user_input()
+add_value(tx_amount)
+
+tx_amount = get_user_input()
+add_value(last_transaction=get_last_blockchain_value(), transaction_amount=tx_amount)
+
+tx_amount = get_user_input()
+add_value(tx_amount, get_last_blockchain_value())
+
+print(blockchain)
