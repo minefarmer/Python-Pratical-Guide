@@ -1,4 +1,4 @@
-# Initializing our (empty) blockchain list
+# # Initializing our (empty) blockchain list
 blockchain = []
 
 
