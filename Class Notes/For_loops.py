@@ -42,5 +42,4 @@ for block in blockchain:
     print('Outputting Block')
     print(block)
     
-
 print('Done!')

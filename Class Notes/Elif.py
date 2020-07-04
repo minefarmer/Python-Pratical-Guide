@@ -54,8 +54,7 @@ while True:
         add_value(tx_amount, get_last_blockchain_value())
     elif user_choice == '2':
         print_blockchain_elements()
-    elif user_choice == 'q:'
-        
+    elif user_choice == 'q':        
     else:
         print('Input was invalid, please pick a value from the list!')
         
