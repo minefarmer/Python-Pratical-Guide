@@ -6,7 +6,7 @@ genesis_block = {
 }
 blockchain = [genesis_block]
 open_transactions = []
-owner = 'Carl'
+owner = 'Max'
 
 
 def get_last_blockchain_value():
@@ -43,7 +43,6 @@ def mine_block():
         value = last_block[key]
         hashed_block = hashed_block + str(value)
 
-    print(hashed_block)
     block = {
         'previous_hash': hashed_block,
         'index': len(blockchain),
@@ -144,4 +143,3 @@ else:
 
 
 print('Done!')
-
