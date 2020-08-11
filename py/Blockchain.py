@@ -1,4 +1,6 @@
 # Initializing our (empty) blockchain list
+MINING_REWARD = 10
+
 genesis_block = {
     'previous_hash': '',
     'index': 0,
@@ -8,6 +10,7 @@ blockchain = [genesis_block]
 open_transactions = []
 owner = 'Carl'
 participants = {'Carl'}
+
 
 
 def hash_block(block):
